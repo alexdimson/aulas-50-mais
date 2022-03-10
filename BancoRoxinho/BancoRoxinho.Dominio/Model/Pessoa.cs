@@ -6,9 +6,15 @@ namespace BancoRoxinho.Dominio.Model
     public class Pessoa
     {
         [Key]
+        [Required]
         public int Id { get; set; }
 
         public string Endereco { get; set; }
         public ContaCorrente ContaCorrente { get; set; }
+
+        public Pessoa()
+        {
+            ContaCorrente = new ContaCorrente();
+        }
     }
 }
